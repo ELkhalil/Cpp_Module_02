@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelkhali <aelkhali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 18:59:50 by aelkhali          #+#    #+#             */
-/*   Updated: 2023/07/01 14:27:37 by aelkhali         ###   ########.fr       */
+/*   Created: 2023/07/18 10:49:20 by aelkhali          #+#    #+#             */
+/*   Updated: 2023/07/22 13:00:19 by aelkhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
 
-class Fixed {
-private:
-    int _value;
-    static const int fractionalBits = 8;
-
+class Fixed
+{
 public:
-    Fixed();
-    Fixed(const int value);
-    Fixed(const float value);
-    Fixed(const Fixed& other);
-    Fixed& operator=(const Fixed& other);
-    ~Fixed();
+    Fixed   ( void );
+    Fixed   ( const int value );
+    Fixed   ( const float value );
+    Fixed   ( Fixed const& other );
 
-    float toFloat() const;
-    int toInt() const;
-    int getRawBits() const;
-    void setRawBits(const int raw);
+    ~Fixed  ( void );
+
+    Fixed&  operator=( Fixed const& other );
+
+    int     getRawBits( void ) const;
+    void    setRawBits( int const raw );
+    int     toInt( void ) const;
+    float   toFloat( void ) const;
+private:
+    static  const int   _fractional_bits;
+    int                 _fixedPointValue;
 };
 
-std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
+std::ostream& operator <<(std::ostream& o, Fixed const& rhs);
 
 #endif

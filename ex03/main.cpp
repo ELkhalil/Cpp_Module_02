@@ -6,23 +6,36 @@
 /*   By: aelkhali <aelkhali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 10:49:15 by aelkhali          #+#    #+#             */
-/*   Updated: 2023/07/20 14:55:01 by aelkhali         ###   ########.fr       */
+/*   Updated: 2023/07/23 13:02:51 by aelkhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Point.hpp"
 
-int main( void ) 
+int main()
 {
+    // inside Triangle test
+    {
+        Point a(0, 0);
+        Point b(4, 0);
+        Point c(2, 4);
+        Point point(2, 2);
 
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
-    c = b;
-
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-
+        if (bsp(a, b, c, point))
+            std::cout << "The point is inside the triangle" << std::endl;
+        else
+            std::cout << "The point is outside the triangle" << std::endl;
+    }
+    // outside Triangle test
+    {
+        Point a(0, 0);
+        Point b(4, 0);
+        Point c(2, 4);
+        Point point(5, 5);
+        if (bsp(a, b, c, point))
+            std::cout << "The point is inside the triangle" << std::endl;
+        else
+            std::cout << "The point is outside the triangle" << std::endl;
+    }
     return 0;
 }

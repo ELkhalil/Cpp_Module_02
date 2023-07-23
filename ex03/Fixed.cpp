@@ -6,7 +6,7 @@
 /*   By: aelkhali <aelkhali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 10:49:25 by aelkhali          #+#    #+#             */
-/*   Updated: 2023/07/23 15:10:48 by aelkhali         ###   ########.fr       */
+/*   Updated: 2023/07/23 15:01:02 by aelkhali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,11 +82,9 @@ Fixed Fixed::operator/(Fixed const &other)
         return (Fixed(0));
     Fixed   tmp;
     int     tmp_value;
-    int     numerator;
-    
-    numerator = int(this->getRawBits() << _fractional_bits);
-    tmp_value = numerator / other.getRawBits();
-    tmp.setRawBits((int)tmp_value);
+
+    tmp_value = this->getRawBits() / other.getRawBits();
+    tmp.setRawBits(tmp_value << _fractional_bits);
     return (tmp);
 }
 

@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: aelkhali <aelkhali@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/28 12:57:12 by aelkhali          #+#    #+#              #
-#    Updated: 2023/06/30 19:19:06 by aelkhali         ###   ########.fr        #
+#    Created: 2023/07/18 10:48:31 by aelkhali          #+#    #+#              #
+#    Updated: 2023/07/22 13:08:52 by aelkhali         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Output Program Name
-NAME = fixed
+NAME = fixedPoint
 
 # Colors :
 GREEN = \033[0;32m
